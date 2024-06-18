@@ -1,0 +1,363 @@
+2024-06-18 20:32:17 [main] INFO  auto.create.oci_vm.OciVmApplication - Starting OciVmApplication using Java 11.0.19 on DESKTOP-PILPLLE with PID 6460 (C:\Users\sHu\Desktop\auto-create-oci_vm\out\production\classes started by sHu in C:\Users\sHu\Desktop\auto-create-oci_vm)
+2024-06-18 20:32:17 [main] INFO  auto.create.oci_vm.OciVmApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-18 20:32:18 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2024-06-18 20:32:18 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2024-06-18 20:32:18 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-18 20:32:18 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.79]
+2024-06-18 20:32:18 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-18 20:32:18 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 810 ms
+2024-06-18 20:32:18 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'oracleCloudConfig' defined in file [C:\Users\sHu\Desktop\auto-create-oci_vm\out\production\classes\auto\create\oci_vm\config\OracleCloudConfig.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [auto.create.oci_vm.config.OracleCloudConfig$$EnhancerBySpringCGLIB$$46eb12af]: Constructor threw exception; nested exception is java.io.FileNotFoundException: \root\ociConfig.txt (지정된 경로를 찾을 수 없습니다)
+2024-06-18 20:32:18 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-06-18 20:32:18 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-06-18 20:32:18 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'oracleCloudConfig' defined in file [C:\Users\sHu\Desktop\auto-create-oci_vm\out\production\classes\auto\create\oci_vm\config\OracleCloudConfig.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [auto.create.oci_vm.config.OracleCloudConfig$$EnhancerBySpringCGLIB$$46eb12af]: Constructor threw exception; nested exception is java.io.FileNotFoundException: \root\ociConfig.txt (지정된 경로를 찾을 수 없습니다)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:315)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:296)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at auto.create.oci_vm.OciVmApplication.main(OciVmApplication.java:14)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [auto.create.oci_vm.config.OracleCloudConfig$$EnhancerBySpringCGLIB$$46eb12af]: Constructor threw exception; nested exception is java.io.FileNotFoundException: \root\ociConfig.txt (지정된 경로를 찾을 수 없습니다)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:311)
+	... 19 common frames omitted
+Caused by: java.io.FileNotFoundException: \root\ociConfig.txt (지정된 경로를 찾을 수 없습니다)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at com.oracle.bmc.ConfigFileReader.parse(ConfigFileReader.java:122)
+	at com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider.<init>(ConfigFileAuthenticationDetailsProvider.java:64)
+	at auto.create.oci_vm.config.OracleCloudConfig.<init>(OracleCloudConfig.java:26)
+	at auto.create.oci_vm.config.OracleCloudConfig$$EnhancerBySpringCGLIB$$46eb12af.<init>(<generated>)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:211)
+	... 21 common frames omitted
+2024-06-18 20:32:51 [main] INFO  auto.create.oci_vm.OciVmApplication - Starting OciVmApplication using Java 11.0.19 on DESKTOP-PILPLLE with PID 15368 (C:\Users\sHu\Desktop\auto-create-oci_vm\out\production\classes started by sHu in C:\Users\sHu\Desktop\auto-create-oci_vm)
+2024-06-18 20:32:51 [main] INFO  auto.create.oci_vm.OciVmApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-18 20:32:51 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2024-06-18 20:32:51 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2024-06-18 20:32:51 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-18 20:32:51 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.79]
+2024-06-18 20:32:51 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-18 20:32:51 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 816 ms
+2024-06-18 20:32:51 [main] INFO  com.oracle.bmc.Services - Registering new service: Services.BasicService(serviceName=COMPUTE, serviceEndpointPrefix=iaas, serviceEndpointTemplate=https://iaas.{region}.{secondLevelDomain}, endpointServiceName=null)
+2024-06-18 20:32:51 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'oracleCloudConfig' defined in file [C:\Users\sHu\Desktop\auto-create-oci_vm\out\production\classes\auto\create\oci_vm\config\OracleCloudConfig.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [auto.create.oci_vm.config.OracleCloudConfig$$EnhancerBySpringCGLIB$$6b55d272]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Could not find private key: /root/zergonetop@gmail.com_2024-06-07T14_00_28.293Z.pem
+2024-06-18 20:32:51 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-06-18 20:32:51 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-06-18 20:32:51 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'oracleCloudConfig' defined in file [C:\Users\sHu\Desktop\auto-create-oci_vm\out\production\classes\auto\create\oci_vm\config\OracleCloudConfig.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [auto.create.oci_vm.config.OracleCloudConfig$$EnhancerBySpringCGLIB$$6b55d272]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Could not find private key: /root/zergonetop@gmail.com_2024-06-07T14_00_28.293Z.pem
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:315)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:296)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at auto.create.oci_vm.OciVmApplication.main(OciVmApplication.java:14)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [auto.create.oci_vm.config.OracleCloudConfig$$EnhancerBySpringCGLIB$$6b55d272]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Could not find private key: /root/zergonetop@gmail.com_2024-06-07T14_00_28.293Z.pem
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:311)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not find private key: /root/zergonetop@gmail.com_2024-06-07T14_00_28.293Z.pem
+	at com.oracle.bmc.auth.SimplePrivateKeySupplier.get(SimplePrivateKeySupplier.java:30)
+	at com.oracle.bmc.auth.SimplePrivateKeySupplier.get(SimplePrivateKeySupplier.java:16)
+	at com.oracle.bmc.auth.SimpleAuthenticationDetailsProvider.getPrivateKey(SimpleAuthenticationDetailsProvider.java:68)
+	at com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider$ConfigFileSimpleAuthenticationDetailsProvider.getPrivateKey(ConfigFileAuthenticationDetailsProvider.java:254)
+	at com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider.getPrivateKey(ConfigFileAuthenticationDetailsProvider.java:158)
+	at com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory.createKeySupplier(DefaultRequestSignerFactory.java:109)
+	at com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory.createRequestSigner(DefaultRequestSignerFactory.java:53)
+	at com.oracle.bmc.http.internal.BaseClient.<init>(BaseClient.java:115)
+	at com.oracle.bmc.http.internal.BaseSyncClient.<init>(BaseSyncClient.java:36)
+	at com.oracle.bmc.core.ComputeClient.<init>(ComputeClient.java:37)
+	at com.oracle.bmc.core.ComputeClient$Builder.build(ComputeClient.java:109)
+	at auto.create.oci_vm.config.OracleCloudConfig.<init>(OracleCloudConfig.java:31)
+	at auto.create.oci_vm.config.OracleCloudConfig$$EnhancerBySpringCGLIB$$6b55d272.<init>(<generated>)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:211)
+	... 21 common frames omitted
+Caused by: java.io.FileNotFoundException: \root\zergonetop@gmail.com_2024-06-07T14_00_28.293Z.pem (지정된 경로를 찾을 수 없습니다)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at com.oracle.bmc.auth.SimplePrivateKeySupplier.get(SimplePrivateKeySupplier.java:28)
+	... 38 common frames omitted
+2024-06-18 22:41:29 [main] INFO  auto.create.oci_vm.OciVmApplication - Starting OciVmApplication using Java 11.0.19 on DESKTOP-PILPLLE with PID 16452 (C:\Users\sHu\Desktop\auto-create-oci_vm\out\production\classes started by sHu in C:\Users\sHu\Desktop\auto-create-oci_vm)
+2024-06-18 22:41:29 [main] INFO  auto.create.oci_vm.OciVmApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-18 22:41:30 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2024-06-18 22:41:30 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2024-06-18 22:41:30 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-18 22:41:30 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.79]
+2024-06-18 22:41:30 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-18 22:41:30 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 801 ms
+2024-06-18 22:41:30 [main] INFO  com.oracle.bmc.Services - Registering new service: Services.BasicService(serviceName=COMPUTE, serviceEndpointPrefix=iaas, serviceEndpointTemplate=https://iaas.{region}.{secondLevelDomain}, endpointServiceName=null)
+2024-06-18 22:41:30 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'oracleCloudConfig' defined in file [C:\Users\sHu\Desktop\auto-create-oci_vm\out\production\classes\auto\create\oci_vm\config\OracleCloudConfig.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [auto.create.oci_vm.config.OracleCloudConfig$$EnhancerBySpringCGLIB$$799b4fe5]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Private key must be in PEM format
+2024-06-18 22:41:30 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-06-18 22:41:30 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-06-18 22:41:30 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'oracleCloudConfig' defined in file [C:\Users\sHu\Desktop\auto-create-oci_vm\out\production\classes\auto\create\oci_vm\config\OracleCloudConfig.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [auto.create.oci_vm.config.OracleCloudConfig$$EnhancerBySpringCGLIB$$799b4fe5]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Private key must be in PEM format
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:315)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:296)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at auto.create.oci_vm.OciVmApplication.main(OciVmApplication.java:14)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [auto.create.oci_vm.config.OracleCloudConfig$$EnhancerBySpringCGLIB$$799b4fe5]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Private key must be in PEM format
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:311)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Private key must be in PEM format
+	at com.oracle.bmc.http.signing.internal.PEMFileRSAPrivateKeySupplier.<init>(PEMFileRSAPrivateKeySupplier.java:136)
+	at com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory.createKeySupplier(DefaultRequestSignerFactory.java:110)
+	at com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory.createRequestSigner(DefaultRequestSignerFactory.java:53)
+	at com.oracle.bmc.http.internal.BaseClient.<init>(BaseClient.java:115)
+	at com.oracle.bmc.http.internal.BaseSyncClient.<init>(BaseSyncClient.java:36)
+	at com.oracle.bmc.core.ComputeClient.<init>(ComputeClient.java:37)
+	at com.oracle.bmc.core.ComputeClient$Builder.build(ComputeClient.java:109)
+	at auto.create.oci_vm.config.OracleCloudConfig.<init>(OracleCloudConfig.java:32)
+	at auto.create.oci_vm.config.OracleCloudConfig$$EnhancerBySpringCGLIB$$799b4fe5.<init>(<generated>)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:211)
+	... 21 common frames omitted
+2024-06-18 22:58:30 [main] INFO  auto.create.oci_vm.OciVmApplication - Starting OciVmApplication using Java 11.0.19 on DESKTOP-PILPLLE with PID 23172 (C:\Users\sHu\Desktop\auto-create-oci_vm\out\production\classes started by sHu in C:\Users\sHu\Desktop\auto-create-oci_vm)
+2024-06-18 22:58:30 [main] INFO  auto.create.oci_vm.OciVmApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-18 22:58:31 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+2024-06-18 22:58:31 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+2024-06-18 22:58:31 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-18 22:58:31 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.79]
+2024-06-18 22:58:31 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-18 22:58:31 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 783 ms
+2024-06-18 22:58:31 [main] INFO  com.oracle.bmc.Services - Registering new service: Services.BasicService(serviceName=COMPUTE, serviceEndpointPrefix=iaas, serviceEndpointTemplate=https://iaas.{region}.{secondLevelDomain}, endpointServiceName=null)
+2024-06-18 22:58:31 [main] INFO  com.oracle.bmc.Region - Loaded service 'COMPUTE' endpoint mappings: {AP_SINGAPORE_1=https://iaas.ap-singapore-1.oraclecloud.com}
+2024-06-18 22:58:31 [main] INFO  com.oracle.bmc.core.ComputeClient - Setting endpoint to https://iaas.ap-singapore-1.oraclecloud.com
+2024-06-18 22:58:31 [main] INFO  c.o.b.h.c.j.JerseyHttpClientBuilder - Setting connector provider to ApacheConnectorProvider
+2024-06-18 22:58:32 [main] INFO  com.oracle.bmc.ClientRuntime - Using SDK: Oracle-JavaSDK/3.43.0
+2024-06-18 22:58:32 [main] INFO  com.oracle.bmc.ClientRuntime - User agent set to: Oracle-JavaSDK/3.43.0 (Windows 10/10.0; Java/11.0.19; OpenJDK 64-Bit Server VM/11.0.19+7)
+2024-06-18 22:58:32 [main] INFO  com.oracle.bmc.core.ComputeClient - The client is compatible with the oci-java-sdk-common version '3.43.0', since the client was generated using codegen version '2.78', which is in the compatible codegen version range '2.26' to '2.78'
+2024-06-18 22:58:32 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-06-18 22:58:32 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+2024-06-18 22:58:32 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+2024-06-18 22:58:32 [main] INFO  auto.create.oci_vm.OciVmApplication - Started OciVmApplication in 1.754 seconds (JVM running for 2.705)
+2024-06-18 22:59:09 [scheduling-1] ERROR a.c.o.schedular.CreateVmSchedular - SRV5 서버 생성에 실패하였습니다. (Out of host capacity)
+2024-06-18 23:31:09 [main] INFO  auto.create.oci_vm.OciVmApplication - Starting OciVmApplication using Java 11.0.19 on DESKTOP-PILPLLE with PID 12320 (C:\Users\sHu\Desktop\auto-create-oci_vm\out\production\classes started by sHu in C:\Users\sHu\Desktop\auto-create-oci_vm)
+2024-06-18 23:31:09 [main] INFO  auto.create.oci_vm.OciVmApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-18 23:31:09 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-06-18 23:31:09 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-18 23:31:09 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-18 23:31:09 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.79]
+2024-06-18 23:31:09 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-18 23:31:09 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 809 ms
+2024-06-18 23:31:09 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'oracleCloudConfig' defined in file [C:\Users\sHu\Desktop\auto-create-oci_vm\out\production\classes\auto\create\oci_vm\config\OracleCloudConfig.class]: Unexpected exception during bean creation; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'oracle.cloud.apiKey.path' in value "${oracle.cloud.apiKey.path}"
+2024-06-18 23:31:09 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-06-18 23:31:09 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-06-18 23:31:09 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'oracleCloudConfig' defined in file [C:\Users\sHu\Desktop\auto-create-oci_vm\out\production\classes\auto\create\oci_vm\config\OracleCloudConfig.class]: Unexpected exception during bean creation; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'oracle.cloud.apiKey.path' in value "${oracle.cloud.apiKey.path}"
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at auto.create.oci_vm.OciVmApplication.main(OciVmApplication.java:14)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'oracle.cloud.apiKey.path' in value "${oracle.cloud.apiKey.path}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:191)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:936)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1332)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	... 14 common frames omitted
+2024-06-18 23:47:33 [main] INFO  auto.create.oci_vm.OciVmApplication - Starting OciVmApplication using Java 11.0.19 on DESKTOP-PILPLLE with PID 11352 (C:\Users\sHu\Desktop\auto-create-oci_vm\out\production\classes started by sHu in C:\Users\sHu\Desktop\auto-create-oci_vm)
+2024-06-18 23:47:33 [main] INFO  auto.create.oci_vm.OciVmApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-18 23:47:34 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-06-18 23:47:34 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-18 23:47:34 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-18 23:47:34 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.79]
+2024-06-18 23:47:34 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-18 23:47:34 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 799 ms
+2024-06-18 23:47:34 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'oracleCloudConfig' defined in file [C:\Users\sHu\Desktop\auto-create-oci_vm\out\production\classes\auto\create\oci_vm\config\OracleCloudConfig.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [auto.create.oci_vm.config.OracleCloudConfig$$EnhancerBySpringCGLIB$$901918cf]: Constructor threw exception; nested exception is java.lang.NullPointerException
+2024-06-18 23:47:34 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-06-18 23:47:34 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-06-18 23:47:34 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'oracleCloudConfig' defined in file [C:\Users\sHu\Desktop\auto-create-oci_vm\out\production\classes\auto\create\oci_vm\config\OracleCloudConfig.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [auto.create.oci_vm.config.OracleCloudConfig$$EnhancerBySpringCGLIB$$901918cf]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at auto.create.oci_vm.OciVmApplication.main(OciVmApplication.java:14)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [auto.create.oci_vm.config.OracleCloudConfig$$EnhancerBySpringCGLIB$$901918cf]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1326)
+	... 17 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at java.base/java.io.File.<init>(File.java:278)
+	at auto.create.oci_vm.config.OracleCloudConfig.initPublicKey(OracleCloudConfig.java:53)
+	at auto.create.oci_vm.config.OracleCloudConfig.<init>(OracleCloudConfig.java:47)
+	at auto.create.oci_vm.config.OracleCloudConfig$$EnhancerBySpringCGLIB$$901918cf.<init>(<generated>)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:211)
+	... 19 common frames omitted
+2024-06-18 23:49:35 [main] INFO  auto.create.oci_vm.OciVmApplication - Starting OciVmApplication using Java 11.0.19 on DESKTOP-PILPLLE with PID 10168 (C:\Users\sHu\Desktop\auto-create-oci_vm\out\production\classes started by sHu in C:\Users\sHu\Desktop\auto-create-oci_vm)
+2024-06-18 23:49:35 [main] INFO  auto.create.oci_vm.OciVmApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-18 23:49:36 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-06-18 23:49:36 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-18 23:49:36 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-18 23:49:36 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.79]
+2024-06-18 23:49:36 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-18 23:49:36 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 805 ms
+2024-06-18 23:49:36 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'oracleCloudConfig' defined in file [C:\Users\sHu\Desktop\auto-create-oci_vm\out\production\classes\auto\create\oci_vm\config\OracleCloudConfig.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [auto.create.oci_vm.config.OracleCloudConfig$$EnhancerBySpringCGLIB$$901918cf]: Constructor threw exception; nested exception is java.lang.NullPointerException
+2024-06-18 23:49:36 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-06-18 23:49:36 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-06-18 23:49:36 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'oracleCloudConfig' defined in file [C:\Users\sHu\Desktop\auto-create-oci_vm\out\production\classes\auto\create\oci_vm\config\OracleCloudConfig.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [auto.create.oci_vm.config.OracleCloudConfig$$EnhancerBySpringCGLIB$$901918cf]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at auto.create.oci_vm.OciVmApplication.main(OciVmApplication.java:14)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [auto.create.oci_vm.config.OracleCloudConfig$$EnhancerBySpringCGLIB$$901918cf]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1326)
+	... 17 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at java.base/java.io.File.<init>(File.java:278)
+	at auto.create.oci_vm.config.OracleCloudConfig.initPublicKey(OracleCloudConfig.java:53)
+	at auto.create.oci_vm.config.OracleCloudConfig.<init>(OracleCloudConfig.java:47)
+	at auto.create.oci_vm.config.OracleCloudConfig$$EnhancerBySpringCGLIB$$901918cf.<init>(<generated>)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:211)
+	... 19 common frames omitted
+2024-06-18 23:51:38 [main] INFO  auto.create.oci_vm.OciVmApplication - Starting OciVmApplication using Java 11.0.19 on DESKTOP-PILPLLE with PID 10372 (C:\Users\sHu\Desktop\auto-create-oci_vm\out\production\classes started by sHu in C:\Users\sHu\Desktop\auto-create-oci_vm)
+2024-06-18 23:51:38 [main] INFO  auto.create.oci_vm.OciVmApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-18 23:51:39 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-06-18 23:51:39 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-18 23:51:39 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-18 23:51:39 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.79]
+2024-06-18 23:51:39 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-18 23:51:39 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 791 ms
+2024-06-18 23:51:39 [main] INFO  com.oracle.bmc.Services - Registering new service: Services.BasicService(serviceName=COMPUTE, serviceEndpointPrefix=iaas, serviceEndpointTemplate=https://iaas.{region}.{secondLevelDomain}, endpointServiceName=null)
+2024-06-18 23:51:39 [main] INFO  com.oracle.bmc.Region - Loaded service 'COMPUTE' endpoint mappings: {AP_SINGAPORE_1=https://iaas.ap-singapore-1.oraclecloud.com}
+2024-06-18 23:51:39 [main] INFO  com.oracle.bmc.core.ComputeClient - Setting endpoint to https://iaas.ap-singapore-1.oraclecloud.com
+2024-06-18 23:51:39 [main] INFO  c.o.b.h.c.j.JerseyHttpClientBuilder - Setting connector provider to ApacheConnectorProvider
+2024-06-18 23:51:39 [main] INFO  com.oracle.bmc.ClientRuntime - Using SDK: Oracle-JavaSDK/3.43.0
+2024-06-18 23:51:39 [main] INFO  com.oracle.bmc.ClientRuntime - User agent set to: Oracle-JavaSDK/3.43.0 (Windows 10/10.0; Java/11.0.19; OpenJDK 64-Bit Server VM/11.0.19+7)
+2024-06-18 23:51:39 [main] INFO  com.oracle.bmc.core.ComputeClient - The client is compatible with the oci-java-sdk-common version '3.43.0', since the client was generated using codegen version '2.78', which is in the compatible codegen version range '2.26' to '2.78'
+2024-06-18 23:51:39 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-06-18 23:51:39 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-18 23:51:39 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-18 23:51:39 [main] INFO  auto.create.oci_vm.OciVmApplication - Started OciVmApplication in 1.778 seconds (JVM running for 2.662)
+2024-06-18 23:52:09 [scheduling-1] ERROR a.c.o.schedular.CreateVmSchedular - SRV5 서버 생성에 실패하였습니다. (Out of host capacity)

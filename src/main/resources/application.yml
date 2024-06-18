@@ -1,0 +1,41 @@
+oracle:
+  cloud:
+    apiKey:
+      profile: DEFAULT
+      user: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      fingerprint: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      tenancy: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      region: ap-singapore-1
+      privKey:
+        path: /root/test123@gmail.com_2024-05-24T13_12_12.293Z.pem
+      pubKey:
+        path: /root/ssh-key-2024-05-24.key.pub
+
+    instance:
+      x86:
+        # x86 인스턴스 생성하지 않음      --> displayName : null
+        # x86 인스턴스 1개 생성          --> displayName : srv1
+        # x86 인스턴스 2개 생성          --> displayName : srv1,srv2     (콤마로 구분)
+        displayName: null
+        imageId: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        shape: VM.Standard.E2.1.Micro
+        volume: 50
+        availabilityDomain: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        compartmentId: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        subnetId: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+      arm:
+        # arm 인스턴스 생성하지 않음      --> displayName : null
+        # arm 인스턴스 1개 생성          --> displayName : srv1
+        # arm 인스턴스 2개 생성          --> displayName : srv1,srv2     (콤마로 구분)
+        # 추가적으로 arm 인스턴스는 1개 생성할 때는 vcpu: 4, memory: 24, volume: 100 (프리티어 최대 한도) 로 변경해주세요.
+        displayName: srv3,srv4
+        imageId: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        shape: VM.Standard.A1.Flex
+        vcpu: 2
+        memory: 12
+        volume: 50
+        availabilityDomain: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        compartmentId: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        subnetId: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
